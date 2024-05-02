@@ -257,3 +257,86 @@ public abstract class Animal { // 1
 3. Para definir un método abstracto en una clase abstracta, también utilizamos la palabra **abstract** en la firma del método y lo dejamos sin un cuerpo.
 
 El resto del código quedaría tal que:
+
+```java
+public abstract class Carnivoro extends Animal {
+
+    protected Carnivoro(int id, String name, int edad, double peso) {
+        super(id, name, edad, peso);
+    }
+    
+    @Override
+    public void alimentarse() {
+        System.out.printf("El animal %s se esta alimentando %n", name);
+        System.out.println("Dando trozo de carne al animal.");
+        System.out.printf("El animal comio mucho, peso inicial: %.2f Kg, actual: %.2f Kg%n", peso , peso + 1.0);
+        super.peso = peso + 1.0;
+    }
+
+}
+```
+
+```java
+public abstract class Herbivoro extends Animal {
+
+    protected Herbivoro(int id, String name, int edad, double peso) {
+        super(id, name, edad, peso);
+    }
+    
+
+    @Override
+    public void alimentarse() {
+        System.out.printf("El animal %s se esta alimentando %n", name);
+        System.out.println("Dando ensalada al animal.");
+    }
+}
+
+```
+
+```java
+public class Perro extends Carnivoro {
+
+    public Perro(int id, String name, int edad, double peso) {
+        super(id, name, edad, peso);
+    }
+
+    @Override
+    public void saludar() {
+        System.out.printf("- Hola! %s%n", name);
+        System.out.println("+ Gau gau!");
+    }
+    
+}
+```
+
+```java
+public class Gato extends Carnivoro {
+
+    public Gato(int id, String name, int edad, double peso) {
+        super(id, name, edad, peso);
+    }
+    
+
+    @Override
+    public void saludar() {
+        System.out.printf("- Hola! %s%n", name);
+        System.out.println("+ Miau miaa!");
+    }
+}
+```
+
+```java
+public class Vaca extends Herbivoro {
+
+    public Vaca(int id, String name, int edad, double peso) {
+        super(id, name, edad, peso);
+    }
+    
+    @Override
+    public void saludar() {
+        System.out.printf("- Hola! %s%n", name);
+        System.out.println("+ MUUUU!");
+    }
+}
+
+```

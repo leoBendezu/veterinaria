@@ -9,7 +9,7 @@ public class Gato extends Carnivoro {
 
     @Override
     public void saludar() {
-        super.saludar();
+        System.out.printf("- Hola! %s%n", name);
         System.out.println("+ Miau miaa!");
     }
 }

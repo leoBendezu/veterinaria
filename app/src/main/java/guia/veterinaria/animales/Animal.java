@@ -1,13 +1,13 @@
 package guia.veterinaria.animales;
 
-public class Animal {
+public abstract class Animal {
 
     protected int id;
     protected String name;
     protected int edad;
     protected double peso;
 
-    public Animal(int id, String name, int edad, double peso) {
+    protected Animal(int id, String name, int edad, double peso) {
         this.id = id;
         this.name = name;
         this.edad = edad;
@@ -15,7 +15,6 @@ public class Animal {
     }
 
     public void baniarse() {
-
         System.out.printf("Bañando a: %s%n",name);
         System.out.println(">> Enguague Listo!");
         System.out.println(">> Lavado Listo!");
@@ -23,13 +22,9 @@ public class Animal {
     
     }
 
-    public void saludar() {
-        System.out.printf("- Hola! %s%n", name);
-    }
+    public abstract void saludar();
 
-    public void alimentarse() {
-        System.out.printf("El animal %s se esta alimentando %n", name);
-    }
+    public abstract void alimentarse();
 
     public int getId() {
         return id;

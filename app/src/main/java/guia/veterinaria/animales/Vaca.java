@@ -8,7 +8,7 @@ public class Vaca extends Herbivoro {
     
     @Override
     public void saludar() {
-        super.saludar();
+        System.out.printf("- Hola! %s%n", name);
         System.out.println("+ MUUUU!");
     }
 }
